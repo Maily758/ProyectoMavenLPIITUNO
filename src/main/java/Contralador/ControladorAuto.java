@@ -31,6 +31,15 @@ public class ControladorAuto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//
+		String accion=request.getParameter("action");
+		if(accion!=null){
+			switch(accion){
+			case"registrar":
+				request.getRequestDispatcher("FrmRegistrar.jsp").forward(request, response);
+			}
+			}
 		//INICIAMOS UA INSTANCIA A LA RESPUESTA CLASE
 		ClassCrudAuto cruauto=new ClassCrudAuto();
 		TblAuto tblauto=new TblAuto();
